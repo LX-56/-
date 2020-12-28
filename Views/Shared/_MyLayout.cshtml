@@ -1,0 +1,162 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pike Admin - Free Bootstrap 4 Admin Template</title>
+    <meta name="description" content="Free Bootstrap 4 Admin Theme | Pike Admin">
+
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/images/favicon.ico">
+
+    <!-- Bootstrap CSS -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Font Awesome CSS -->
+    <link href="~/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Custom CSS -->
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" />
+
+    <!-- BEGIN CSS for this page -->
+    <!-- END CSS for this page -->
+
+</head>
+
+<body class="adminbody">
+    @RenderBody()
+    <div id="main">
+
+        <!-- top bar navigation -->
+        <div class="headerbar">
+
+            <!-- LOGO -->
+            <div class="headerbar-left">
+                <a href="index.html" class="logo"><img alt="Logo" src="~/images/logo.png" /> <span>汽车销售管理系统</span></a>
+            </div>
+
+            <nav class="navbar-custom">
+
+                <ul class="list-inline float-right mb-0">
+
+                    <li class="list-inline-item dropdown notif">
+                        <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <i class="fa fa-fw fa-question-circle"></i>
+                        </a>
+                </ul>
+
+                <ul class="list-inline menu-left mb-0">
+                    <li class="float-left">
+                        <button class="button-menu-mobile open-left">
+                            <i class="fa fa-fw fa-bars"></i>
+                        </button>
+                    </li>
+                </ul>
+
+            </nav>
+
+        </div>
+        <!-- End Navigation -->
+        <!-- Left Sidebar -->
+        <div class="left main-sidebar">
+
+            <div class="sidebar-inner leftscroll">
+
+                <div id="sidebar-menu">
+
+                    <ul>
+
+                        <li class="submenu">
+                            <a href="#" class="active"><i class="fa fa-fw fa-table"></i> <span> 用户端 </span> <span class="menu-arrow"></span></a>
+                            <ul class="list-unstyled">
+
+                                <a href="#" class="active"><span> 用户管理 </span> <span class="menu-arrow"></span></a>
+                                @*<li class="active"><a href="@Url.Action("Index1","Automobile")">用户管理</a></li>*@
+                                <ul class="list-unstyled">
+                                    <li class="active"><a href="@Url.Action("client_search","Client")">用户信息</a></li>
+                                    <li class="active"><a href="@Url.Action("order_search","Client")">订单信息</a></li>
+                                </ul>
+                                <a href="#" class="active"><span>  预约车辆</span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    <li class="active"><a href="@Url.Action("test_drive","Client")">预约查询</a></li>
+                                    @*<li class="active"><a href="@Url.Action("Index4","Automobile")">预约确认</a></li>*@
+                                    @*<li><a href="@Url.Action("Index2","Automobile")">预约车辆</a></li>*@
+                                </ul>
+                            </ul>
+                        </li>
+
+
+                        <li class="submenu">
+                            <a class="active" href="#"><i class="fa fa-fw fa-star"></i><span> 管理员端 </span> <span class="menu-arrow"></span></a>
+                            <ul class="list-unstyled">
+                                <a href="#" class="active"><span> 用户管理 </span> <span class="menu-arrow"></span></a>
+                               
+                                <ul class="list-unstyled">
+                                    <li class="active"><a href="@Url.Action("salesman_search","Administrators")">销售员</a></li>
+                                    <li class="active"><a href="@Url.Action("clients_search","Administrators")">用户</a></li>
+                                </ul>
+                                <li><a target="_blank" href="@Url.Action("sales_information","Administrators")">销售管理</a></li>
+                                <li><a href="@Url.Action("appointment_drive","Administrators")">试驾管理</a></li>
+                                <li><a href="@Url.Action("information_import","Administrators")">用户和汽车信息管理</a></li>
+
+                                <a href="#" class="active"><span> 查询管理 </span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    <li class="active"><a href="@Url.Action("car_search","Administrators")">汽车信息</a></li>
+                                    <li class="active"><a href="@Url.Action("orders_search","Administrators")">订单查询</a></li>
+                                </ul>
+                                <li><a href="@Url.Action("statistics","Administrators")">统计管理</a></li>
+
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                    <div class="clearfix"></div>
+
+                </div>
+
+
+                <div class="clearfix"></div>
+
+            </div>
+
+
+        </div>
+
+        <footer class="footer">
+            <span class="text-right">
+
+            </span>
+
+        </footer>
+       
+    </div>
+   
+    <!-- END main -->
+
+    <script src="~/js/modernizr.min.js"></script>
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/moment.min.js"></script>
+
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+
+    <script src="~/js/detect.js"></script>
+    <script src="~/js/fastclick.js"></script>
+    <script src="~/js/jquery.blockUI.js"></script>
+    <script src="~/js/jquery.nicescroll.js"></script>
+
+    <!-- App js -->
+    <script src="~/js/pikeadmin.js"></script>
+
+    <!-- BEGIN Java Script for this page -->
+    <!-- END Java Script for this page -->
+
+</body>
+</html>
+                       
+
+                      

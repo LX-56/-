@@ -1,0 +1,144 @@
+﻿
+@{
+    ViewData["Title"] = "statistics";
+    int car = (int)ViewData["car"];
+    int suv = (int)ViewData["suv"];
+    int[] month = ViewData["month"] as int[];
+}
+
+<html>
+<body class="adminbody">
+    <div class="content-page">
+
+        <!-- Start content -->
+        <div class="content">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="breadcrumb-holder">
+                            <h1 class="main-title float-left">统计</h1>
+
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+
+                <div class="row">
+
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                <i class="fa fa-table"></i> 月销量统计
+                            </div>
+
+                            <div class="card-body">
+                                <canvas id="barChart"></canvas>
+                            </div>
+
+                        </div><!-- end card-->
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                <i class="fa fa-table"></i>车型销量统计
+                            </div>
+
+                            <div class="card-body">
+                                <canvas id="pieChart"></canvas>
+
+                            </div><!-- end card-->
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script>
+		// barChart
+		var ctx1 = document.getElementById("barChart").getContext('2d');
+		var barChart = new Chart(ctx1, {
+			type: 'bar',
+			data: {
+				labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+				datasets: [{
+					label: '销量',
+					data: [@month[0], @month[1], @month[2], @month[3], @month[4], @month[5], @month[6], @month[7], @month[8], @month[9], @month[10], @month[11]],
+					backgroundColor: [
+						'rgba(50, 99, 132, 0.2)',
+						'rgba(50, 99, 132, 0.2)',
+						'rgba(50, 99, 132, 0.2)',
+						'rgba(50, 99, 132, 0.2)',
+						'rgba(50, 99, 132, 0.2)',
+						'rgba(50, 99, 132, 0.2)',
+						'rgba(50, 99, 132, 0.2)',
+						'rgba(50, 99, 132, 0.2)',
+						'rgba(50, 99, 132, 0.2)',
+						'rgba(50, 99, 132, 0.2)',
+						'rgba(50, 99, 132, 0.2)',
+						'rgba(50, 99, 132, 0.2)'
+					],
+					borderColor: [
+						'rgba(50,99,132,1)',
+						'rgba(50,99,132,1)',
+						'rgba(50,99,132,1)',
+						'rgba(50,99,132,1)',
+						'rgba(50,99,132,1)',
+						'rgba(50,99,132,1)',
+						'rgba(50,99,132,1)',
+						'rgba(50,99,132,1)',
+						'rgba(50,99,132,1)',
+						'rgba(50,99,132,1)',
+						'rgba(50,99,132,1)',
+						'rgba(50,99,132,1)'
+					],
+					borderWidth: 1
+				}]
+			},
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}]
+				}
+			}
+        });
+		// pieChart
+	var ctx3 = document.getElementById("pieChart").getContext('2d');
+	var pieChart = new Chart(ctx3, {
+		type: 'pie',
+		data: {
+				datasets: [{
+					data: [@car, @suv],
+					backgroundColor: [
+						'rgba(255,99,132,1)',
+						'rgba(54, 162, 235, 1)',
+
+					],
+					label: 'Dataset 1'
+				}],
+				labels: [
+					"CAR",
+					"SUV",
+
+				]
+			},
+			options: {
+				responsive: true
+			}
+
+	});
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewData["Title"] = "car_search";
+}
+<div class="content-page">
+
+    <!-- Start content -->
+    <div class="content">
+
+        <div class="container-fluid">
+
+
+
+            <div class="row">
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            <h3><i class="fa fa-user"></i> 汽车信息查询</h3>
+                        </div>
+
+                        <div class="card-body">
+
+
+                            <form action="/Administrators/car_information" method="post" enctype="multipart/form-data">
+
+                                <div class="row">
+
+                                    <div class="col-lg-9 col-xl-9">
+
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label>汽车编号</label>
+                                                    <input class="form-control" name="id" type="text" value="" />
+                                                    <small id="Help" class="form-text text-muted">不输入任何值时显示所有车辆</small>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <button type="submit" class="btn btn-primary">查询</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+
+                                </div>
+
+                            </form>
+
+                        </div>
+                        <!-- end card-body -->
+
+                    </div>
+                    <!-- end card -->
+
+                </div>
+                <!-- end col -->
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

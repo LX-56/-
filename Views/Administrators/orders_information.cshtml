@@ -1,0 +1,198 @@
+﻿
+@{
+    ViewData["Title"] = "orders_information";
+    var list = ViewData["orders_inf"] as List<AutomobileSalesSystem.Entitys.Market>;
+}
+<div class="content-page">
+
+    <!-- Start content -->
+    <div class="content">
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+
+                    <div class="card mb-3">
+
+                        <div class="card-header">
+                            <span class="pull-right"><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal_add_user"><i class="fa fa-user-plus" aria-hidden="true"></i> 添加订单</button></span>
+                            <div class="modal fade custom-modal" tabindex="-1" role="dialog" aria-labelledby="modal_add_user" aria-hidden="true" id="modal_add_user">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+
+                                        <form action="#" method="post" enctype="multipart/form-data">
+
+
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">添加订单</h5>
+                                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                            </div>
+
+                                            <div class="modal-body">
+
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <label>用户编号</label>
+                                                            <input class="form-control" name="cid" type="number" required />
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <label>车辆编号</label>
+                                                            <input class="form-control" name="aid" type="number" required />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group">
+                                                            <label>销售员编号</label>
+                                                            <input class="form-control" name="sid" type="number" required />
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-primary">确认</button>
+                                            </div>
+
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- end card-header -->
+
+                        <div class="card-body">
+
+
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:100px">订单编号</th>
+                                            <th style="width:100px">用户编号</th>
+
+                                            <th style="width:100px">汽车编号</th>
+                                            <th style="width:100px">交易日期</th>
+                                            <th style="width:100px">编辑/删除</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in list)
+                                        {
+                                            <tr>
+                                                <th scope="row">@item.Id</th>
+                                                <td>@item.Cid</td>
+                                                <td>@item.Aid</td>
+                                                <td>@item.Saledatatime</td>
+
+
+                                                <td>
+                                                    <a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal_edit_user_5"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                                    <div class="modal fade custom-modal" tabindex="-1" role="dialog" aria-hidden="true" id="modal_edit_user_5">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+
+                                                                <form action="#" method="post" enctype="multipart/form-data">
+
+
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title">修改信息</h5>
+                                                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                                                    </div>
+
+                                                                    <div class="modal-body">
+                                                                        <input type="text" name="id" style="display: none;" value="@item.Id">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-12">
+                                                                                <div class="form-group">
+                                                                                    <label>用户编号</label>
+                                                                                    <input class="form-control" name="cid" type="text" value="@item.Cid" />
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label>销售员编号</label>
+                                                                                    <input class="form-control" name="id" type="text" value="@item.Sid" />
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label>车辆编号</label>
+                                                                                    <input class="form-control" name="id" type="text" value="@item.Aid" />
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label>交易日期</label>
+                                                                                <input class="form-control" name="date" type="date" value="@item.Saledatatime" />
+                                                                            </div>
+
+
+                                                                        </div>
+
+
+
+
+
+                                                                    </div>
+
+                                                                    <div class="modal-footer">
+                                                                        <input type="hidden" name="user_id" value="5" />
+                                                                        <button type="submit" class="btn btn-primary">确认</button>
+                                                                    </div>
+
+                                                                </form>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <a href="javascript:deleteRecord_5('5');" class="btn btn-danger btn-sm" data-placement="top" data-toggle="tooltip" data-title="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                                    <script>
+                                                    function deleteRecord_5(RecordId) {
+                                                        if (confirm('Confirm delete')) {
+                                                        }
+                                                    }
+                                                    </script>
+                                                </td>
+                                            </tr>
+                                        }
+
+
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+
+                        </div>
+                        <!-- end card-body -->
+
+                    </div>
+                    <!-- end card -->
+
+                </div>
+                <!-- end col -->
+
+            </div>
+            <!-- end row -->
+        </div>
+    </div>
+
+</div>

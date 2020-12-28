@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewData["Title"] = "order_information";
+    var list = ViewData["orders_inf"] as List<AutomobileSalesSystem.Entitys.Market>;
+}
+<div class="content-page">
+
+    <!-- Start content -->
+    <div class="content">
+
+        <div class="container-fluid">
+
+
+
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="breadcrumb-holder">
+                        <h1 class="main-title float-left">用户端</h1>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+
+
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <h3><i class="fa fa-table"></i>订单信息</h3>
+                    </div>
+                    <form action="#" method="post" enctype="multipart/form-data">
+                        <div class="card-body">
+                            <table class="table table-responsive-xl table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">订单编号</th>
+                                        <th scope="col">用户编号</th>
+                                        <th scope="col">汽车编号</th>
+                                        <th scope="col">交易时间</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in list)
+                                    {
+                                        <tr>
+                                            <th scope="row">@item.Id</th>
+                                            <td>@item.Cid</td>
+                                            <td>@item.Aid</td>
+                                            <td>@item.Saledatatime</td>
+                                        </tr>
+                                    }
+
+
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
